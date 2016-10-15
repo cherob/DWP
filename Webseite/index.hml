@@ -1,0 +1,19 @@
+<html>
+
+<head>
+<script src="demo.js"></script>
+<script type="text/javascript">
+alert("Klick auf ok für ein IPhone")
+if(true){
+	document.write("<title>World</title>");
+}
+</script>
+</head>
+
+<body>
+<script>
+	document.write("<h1>Hello World</h1>");
+</script>
+</body>
+
+</html>

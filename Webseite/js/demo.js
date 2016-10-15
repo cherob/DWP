@@ -1,0 +1,1 @@
+alert("Klick auf ok für ein IPhone")
