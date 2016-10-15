@@ -1,11 +1,7 @@
-body {
-	background-color: #EEE;
-	
-}
-
-#button{
-	border: 1px solid black;
-	width: 100px;
-	height: 30px;
-
+#panel{
+	margin-top: 250px;
+	margin-left: auto; 
+	margin-right: auto; 
+	width: 80%; 
+	height: 80000px
 }

@@ -25,8 +25,6 @@ $( document ).ready(function() {
 	
    	console.log( "ready!" );
 
-	console.log(amountData.eins);
-
 	$.each(amountData, function( index, value ) {
   		console.log( index + " => " + value );
 	});
@@ -38,7 +36,7 @@ $( document ).ready(function() {
 		if(running){
 			myPanel = new jsgl.Panel(document.getElementById("panel"));
 
-		/*	console.log(amountData);
+			console.log(amountData);
 			if(r>127){
 			g++;	
 			b--;}
@@ -50,14 +48,14 @@ $( document ).ready(function() {
 			g--;}
 			 // console.log(r+" "+g+" "+b);
 			 //
-			*/
+			
 			
 			//circle.getStroke().setColor("rgb("+r+","+g+","+b+")");
 	
 			circle = myPanel.createCircle();
 			circle.setCenterLocationXY(400,300);
 			
-			circle.setRadius(amountData.eins);
+			circle.setRadius(radius);
 			circle.getStroke().setWeight(10);
 			myPanel.addElement(circle);
 			
@@ -77,4 +75,9 @@ $( document ).ready(function() {
 		window.setTimeout(makeCircle,500);
 	
 	}
+	
+	function map(x, in_min, in_max, out_min, out_max){
+		return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+	}
+	
 });

@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>PegidaMass</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<body bgcolor="#333">
+
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<script type="text/javascript" src="./js/bootstrap.js"></script>
+		<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="./js/jsgl.min.js"></script>
+		<script type="text/javascript" src="./js/data.js"></script>
+		<script type="text/javascript" src="./js/main.js"></script>
+		
+	</head>
+	<body>
+
+		<div class="jumbotron text-center" >
+  
+			<h1>Die Worte Pegida's</h1>
+			<p>Wie Analysieren, Faszinieren und Verstehen Pegida!</p>
+		</div>
+  
+		<div id="panel"></div>
+	</body>
+</html>
