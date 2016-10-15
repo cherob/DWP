@@ -43,9 +43,11 @@ if(runing){
 	r++;
 	g--;}
 	 // console.log(r+" "+g+" "+b);
-	 //circle.getStroke().setColor("rgb("+r+","+g+","+b+")");
+	 //
 	*/
 	
+	
+	//circle.getStroke().setColor("rgb("+r+","+g+","+b+")");
 	circle = myPanel.createCircle();
 	circle.setCenterLocationXY(400,300);
 	
