@@ -32,9 +32,10 @@
 		
 		<div class="jumbotron text-center" >
 			<h2>Die Worte Pegida's</h2>
-			<p>Wie Analysieren, Faszinieren und Verstehen Pegida!</p>
+			<p>Wir Analysieren, Faszinieren und Verstehen Pegida!</p>
 		</div>
   
+
 		<div id="panel"></div>
 		
 		<div class="bottentest text-center" >
