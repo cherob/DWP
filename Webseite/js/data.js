@@ -8,5 +8,9 @@ var amountData = {
   "Willkommen": 350,
   "Köln": 843,
   "Geil": 332,
+  "Deutschland": 644,
+  "Pegida": 302,
+  "Berlin": 352,
+  "Völkisch": 234,
   "Schlau": 532
 }

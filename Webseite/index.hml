@@ -19,12 +19,17 @@
 	</head>
 	<body>
 
+		
+		
 		<div class="jumbotron text-center" >
-  
-			<h1>Die Worte Pegida's</h1>
+			<h2>Die Worte Pegida's</h2>
 			<p>Wie Analysieren, Faszinieren und Verstehen Pegida!</p>
 		</div>
   
 		<div id="panel"></div>
+		
+		<div class="bottentest text-center" >
+			<p>Warnung an alle Nutzer dieser Seite: Diese Angaben sind nicht Korrekt!</p>
+		</div>
 	</body>
 </html>
