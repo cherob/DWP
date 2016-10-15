@@ -5,16 +5,21 @@
   <meta charset="UTF-8">
     <title>PegidaMass</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="./js/jsgl.min.js"></script>
-  </head>
-  <body>
-  <div id="panel" style="width: 1000px; height: 1000px"><script></script></div>
-    <div id="panel" style="width: 1000px; height: 1000px"></div>
+	
     <script type="text/javascript">
 
 	
  
     </script>
+    <script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="./js/jsgl.min.js"></script>
+    <script type="text/javascript" src="./js/data.js"></script>
+    <script type="text/javascript" src="./js/circle.js"></script>
+  </head>
+  <body>
+  <div id="button"></div>
+    <div id="panel" style="width: 1000px; height: 1000px"></div>
+	
+	
   </body>
 </html>
