@@ -9,7 +9,7 @@
   <body>
     <div id="panel" style="width: 1000px; height: 1000px"></div>
     <script type="text/javascript">
-	var r = 100;
+	var radius = 0;
 	var returnVar = false;
 	console.log("Script Start");
 	makeCircle();
@@ -22,17 +22,24 @@
       circle = myPanel.createCircle();
       circle.setCenterLocationXY(400,300);
 	  
-      circle.setRadius(r);
+      circle.getStroke().setColor("rgb(0,0,255)");
+      circle.setRadius(radius);
       circle.getStroke().setWeight(10);
       myPanel.addElement(circle);
 	  
-	if(r>250){
+	if(radius==250){
 		returnVar = true;
-	}else{
+	}else if(radius==0){
 		returnVar = false;
 	}
-	  r = r+1;
-	  console.log(r);
+	
+	  
+	if(returnVar == false){
+	  radius++;
+	  }else{
+	  radius--;
+	  }
+	  console.log(radius);
 	  window.setTimeout(makeCircle,50);
 	}
 	
