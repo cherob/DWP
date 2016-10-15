@@ -1,7 +1,22 @@
 #panel{
-	margin-top: 250px;
+	margin-top: 150px;
 	margin-left: auto; 
 	margin-right: auto; 
-	width: 80%; 
-	height: 80000px
+	width: 90%; 
+	height: 1600px
+}
+.bottentest {
+  z-index: 1;
+  position: fixed;
+  bottom: -8px;
+  width: 100%;
+  color: inherit;
+  background-color: #BBB;
+}
+
+.bottentest p {
+  color: #F00;
+  font-weight: bold;
+  font-size: 12px;
+  font-weight: 200;
 }
