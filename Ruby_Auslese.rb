@@ -39,5 +39,19 @@ end
   #puts counter
 #puts $woerter
 file.close
-$woerter_sortiert = $woerter.sort {|a1, a2| a1[1].to_i <=> a2[1].to_i}
+$woerter_sortiert = $woerter.sort {|a1, a2| a2[1].to_i <=> a1[1].to_i}
 puts $woerter_sortiert
+
+myfile = File.new("woerter_sortiert.js", "w+")
+myfile.write("var amountData = {" + "\n")
+counter2 = 0
+$woerter_sortiert.each do |a1, a2|
+  output = "\t" + "\"" + a1 + "\"" + ":" +" " + a2.to_s + "," + "\n"
+  myfile.write(output)
+  counter2 = counter2 + 1
+  if counter2 > 2500
+    break
+  end
+end
+myfile.write("}")
+myfile.close
