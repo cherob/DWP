@@ -11,9 +11,9 @@ $( document ).ready(function() {
 	var maxValue = 0;
 	var visibility = 0;
 	var myPanel = new jsgl.Panel(document.getElementById('panel'));
-	var myAnimator = new jsgl.util.Animator();
-//Paste here coode:
 
+	
+	//Paste here coode:
 
 	drawPanel();
 	
@@ -37,7 +37,6 @@ $( document ).ready(function() {
 	        x.className = "topnav";
 	    }
 	});
-
 	
 	function drawPanel (){
 		$.each(amountData, function( index, value ) {
@@ -49,6 +48,7 @@ $( document ).ready(function() {
 		$.each(amountData, function( index, value ) {
 			//console.log( index + " => " + value );
 			if(counter > 9){
+				
 				makeQuadrat(counter+1, value, counter+1+". "+index);
 				makeText(counter+1, value, counter+1+". "+index);
 			}else{
@@ -61,6 +61,7 @@ $( document ).ready(function() {
 	}
 	
 	function makeText(pos, length, letters){
+		if (pos<101){
 		var myLabel = myPanel.createLabel();
 		myLabel.setLocationXY(map($("#panel").width(),1106,2500,10,500)+placeholderLeft,pos*(size+size/5));
 		myLabel.setText(letters+" ("+length+")");
@@ -68,9 +69,11 @@ $( document ).ready(function() {
 		myLabel.setFontColor("inherit");
 		myLabel.setFontFamily("sans-serif");
 		myPanel.addElement(myLabel);
+		}
 	}
 	
 	function makeQuadrat(pos, length, letters) {
+		if (pos<101){
 		var myRect = myPanel.createRectangle();
 		myRect.setRadiiXY(10,500);
 		myRect.getFill().setColor("#c1ff7a");
@@ -78,6 +81,7 @@ $( document ).ready(function() {
 		myRect.setLocationXY(placeholderSide,pos*(size+size/5));
 		myRect.setSizeWH(map(length,0,maxValue,0,$("#panel").width()-placeholderSide),size);
 		myPanel.addElement(myRect);
+		}
 	}
 	
 	function map(x, in_min, in_max, out_min, out_max){
