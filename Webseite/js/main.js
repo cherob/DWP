@@ -7,7 +7,7 @@ $( document ).ready(function() {
 	var size = 50;
 	var counter = 0;
 	var running = true;
-	var placeholderSide = $("#panel").width()/3;
+	var placeholderSide = 330;
 	var placeholderTop = 10;
 	var maxValue = 0;
 	
