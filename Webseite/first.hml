@@ -3,7 +3,9 @@
 <html>
   <head>
   <meta charset="UTF-8">
-    <title>JSGL empty page template</title>
+    <title>PegidaMass</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="./js/jsgl.min.js"></script>
   </head>
   <body>
