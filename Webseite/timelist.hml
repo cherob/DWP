@@ -6,15 +6,39 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<body bgcolor="#333">
 
+		<link rel="stylesheet" type="text/css" href="css/chartist.min.css">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
+	    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+	    <link rel="stylesheet" type="text/css" href="css/xcharts.css">
+		
 		<script type="text/javascript" src="./js/bootstrap.js"></script>
 		<script type="text/javascript" src="./js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="./js/jsgl.min.js"></script>
 		<script type="text/javascript" src="./js/top100.js"></script>
-		<script type="text/javascript" src="./js/main.js"></script>
-	
+		<script type="text/javascript" src="./js/cssham.js"></script>
+		<script type="text/javascript" src="./js/jquery-ui.js"></script>
+		<script type="text/javascript" src="./js/xcharts.js"></script>
+		<script type="text/javascript" src="./js/d3.js"></script>
+		<script type="text/javascript" src="./js/d3.mim.js"></script>
+		<script type="text/javascript" src="./js/chartist.min.js"></script>
+ 
+		<script>
+		$( function() {
+		
+			var availableTags = ['soccer', 'baseball'];
+			
+			$.each(amountData, function( index, value ) {
+				var total = availableTags.push(index);
+			});
+			
+			$( "#tags" ).autocomplete({
+			  source: availableTags //availableTags
+			});
+		});
+		</script>
+		
 	</head>
 	<body>
 
@@ -34,8 +58,62 @@
 			<h2>Die Worte Pegida's</h2>
 			<p>Wie Analysieren, Faszinieren und Verstehen Pegida!</p>
 		</div>
-  
-		<div id="panel"></div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div id="trans" class="ui-widget">
+		  <label for="tags"></label>
+		  <input id="tags">
+		</div>
+		<script>
+
+					/* Add a basic data series with six labels and values */
+			var data = {
+			  labels: ['1', '2', '3', '4', '5', '6'],
+			  series: [
+				{
+				  data: [1, 2, 3, 5, 8, 13]
+				}
+			  ]
+			};
+
+			/* Set some base options (settings will override the default settings in Chartist.js *see default settings*). We are adding a basic label interpolation function for the xAxis labels. */
+			var options = {
+			  axisX: {
+				labelInterpolationFnc: function(value) {
+				  return 'Calendar Week ' + value;
+				}
+			  }
+			};
+
+			/* Now we can specify multiple responsive settings that will override the base settings based on order and if the media queries match. In this example we are changing the visibility of dots and lines as well as use different label interpolations for space reasons. */
+			var responsiveOptions = [
+			  ['screen and (min-width: 641px) and (max-width: 1024px)', {
+				showPoint: false,
+				axisX: {
+				  labelInterpolationFnc: function(value) {
+					return 'Week ' + value;
+				  }
+				}
+			  }],
+			  ['screen and (max-width: 640px)', {
+				showLine: false,
+				axisX: {
+				  labelInterpolationFnc: function(value) {
+					return 'W' + value;
+				  }
+				}
+			  }]
+			];
+
+			/* Initialize the chart with the above settings */
+			new Chartist.Line('#my-chart', data, options, responsiveOptions);
+		</script>
 		
 		<div class="bottentest text-center" >
 			<p>Warnung an alle Nutzer dieser Seite: Diese Angaben sind nicht 100% Korrekt!</p>
