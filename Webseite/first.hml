@@ -3,40 +3,23 @@
 <html>
   <head>
   <meta charset="UTF-8">
-    <title>JSGL empty page template</title>
-    <script type="text/javascript" src="./js/jsgl.min.js"></script>
-  </head>
-  <body>
-    <div id="panel" style="width: 1000px; height: 1000px"></div>
+    <title>PegidaMass</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+	
     <script type="text/javascript">
-	var r = 100;
-	var returnVar = false;
-	console.log("Script Start");
-	makeCircle();
 
-
-	function makeCircle() {
-      myPanel = new jsgl.Panel(document.getElementById("panel"));
-	  
-	  
-      circle = myPanel.createCircle();
-      circle.setCenterLocationXY(400,300);
-	  
-      circle.setRadius(r);
-      circle.getStroke().setWeight(10);
-      myPanel.addElement(circle);
-	  
-	if(r>250){
-		returnVar = true;
-	}else{
-		returnVar = false;
-	}
-	  r = r+1;
-	  console.log(r);
-	  window.setTimeout(makeCircle,50);
-	}
 	
  
     </script>
+    <script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="./js/jsgl.min.js"></script>
+    <script type="text/javascript" src="./js/data.js"></script>
+    <script type="text/javascript" src="./js/circle.js"></script>
+  </head>
+  <body>
+  <div id="button"></div>
+    <div id="panel" style="width: 1000px; height: 1000px"></div>
+	
+	
   </body>
 </html>
