@@ -28,6 +28,16 @@ $( document ).ready(function() {
 		drawPanel();
 		
 	});
+
+	$("#menuButton").click(function() {
+	    var x = document.getElementById("myTopnav");
+	    if (x.className === "topnav") {
+	        x.className += " responsive";
+	    } else {
+	        x.className = "topnav";
+	    }
+	});
+
 	
 	function drawPanel (){
 		$.each(amountData, function( index, value ) {
@@ -73,5 +83,6 @@ $( document ).ready(function() {
 	function map(x, in_min, in_max, out_min, out_max){
 		return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 	}
-	
+
+
 });

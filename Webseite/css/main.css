@@ -20,3 +20,87 @@
   font-size: 12px;
   font-weight: 200;
 }
+
+ /* Remove margins and padding from the list, and add a black background color */
+ul.topnav {
+  z-index: 100;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0px;
+}
+
+/* Float the list items side by side */
+ul.topnav li {
+  background: #666;
+  color: white;
+  width: 300px;
+}
+ul.topnav li.icon {
+  width: 50px;
+}
+
+
+/* Style the links inside the list items */
+ul.topnav li a {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+    color: white;
+    border-top: 1px solid white;
+    width: 200px;
+    margin: 0 50px;
+}
+ul.topnav li.icon a {
+  border-top: none;
+  margin: 0px;
+  width: 50px;
+}
+
+ul.topnav li:first-child a {
+  border-top: none;
+}
+
+
+/* Change background color of links on hover */
+ul.topnav li a:hover {
+  xxbackground-color: #555;
+}
+
+/* Hide the list item that contains the link that should open and close the topnav on small screens */
+ul.topnav li.icon {display: none;}
+
+ /* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
+@media screen and (min-width:5px) {
+  ul.topnav li {display: none;}
+  ul.topnav li.icon {
+    display: inline-block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
+@media screen and (min-width:5px) {
+  ul.topnav.responsive {position: fixed;}
+  ul.topnav.responsive li.icon {
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: block;
+    margin-left: 50px;
+  }
+  ul.topnav.responsive li.icon {
+    margin-left: 0px;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
