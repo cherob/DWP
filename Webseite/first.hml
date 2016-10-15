@@ -7,41 +7,10 @@
     <script type="text/javascript" src="./js/jsgl.min.js"></script>
   </head>
   <body>
+  <div id="panel" style="width: 1000px; height: 1000px"><script></script></div>
     <div id="panel" style="width: 1000px; height: 1000px"></div>
     <script type="text/javascript">
-	var radius = 0;
-	var returnVar = false;
-	console.log("Script Start");
-	makeCircle();
 
-
-	function makeCircle() {
-      myPanel = new jsgl.Panel(document.getElementById("panel"));
-	  
-	  
-      circle = myPanel.createCircle();
-      circle.setCenterLocationXY(400,300);
-	  
-      circle.getStroke().setColor("rgb(0,0,255)");
-      circle.setRadius(radius);
-      circle.getStroke().setWeight(10);
-      myPanel.addElement(circle);
-	  
-	if(radius==250){
-		returnVar = true;
-	}else if(radius==0){
-		returnVar = false;
-	}
-	
-	  
-	if(returnVar == false){
-	  radius++;
-	  }else{
-	  radius--;
-	  }
-	  console.log(radius);
-	  window.setTimeout(makeCircle,50);
-	}
 	
  
     </script>
