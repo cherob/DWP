@@ -30,36 +30,25 @@
 
 	function makeCircle() {
 if(runing){
-	myPanel = new jsgl.Panel($("#panel"));
+	myPanel = new jsgl.Panel(document.getElementById("panel"));
 
-	console.log(getAmount);
-		
+/*	console.log(getAmount);
 	if(r>127){
-	g++;
-	
-	b--;
-	}
-	
+	g++;	
+	b--;}
 	if(g>127){
-	b++;
-	
-	g--;
-	}
-	
-	
+	b++;	
+	g--;}	
 	if(b>127){
 	r++;
-	g--;
-	}
+	g--;}
+	 // console.log(r+" "+g+" "+b);
+	 //circle.getStroke().setColor("rgb("+r+","+g+","+b+")");
+	*/
 	
 	circle = myPanel.createCircle();
 	circle.setCenterLocationXY(400,300);
 	
-	 // console.log(r+" "+g+" "+b);
-
-	
-	
-	//circle.getStroke().setColor("rgb("+r+","+g+","+b+")");
 	circle.setRadius(getAmount.eins);
 	circle.getStroke().setWeight(10);
 	myPanel.addElement(circle);
