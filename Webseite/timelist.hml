@@ -19,7 +19,7 @@
 		<script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="./js/jsgl.min.js"></script>
 		<script type="text/javascript" src="./js/top100.js"></script>
-		<script type="text/javascript" src="./js/woerter_sortiert_timestamps.js"></script>
+		<script type="text/javascript" src="./js/woerter_sortiert_timestamps_tage_dkb.js"></script>
 		<script type="text/javascript" src="./js/cssham.js"></script>
 		<script type="text/javascript" src="./js/jquery-ui.js"></script>
 		<script type="text/javascript" src="./js/xcharts.js"></script>
@@ -76,23 +76,32 @@
 			var xValues = []; 
 			var yValues = [];
 			var info = "";
-
+			var counter = 0;
+			
+			
+			
 			$("#tags").keyup(function(event){
 				if(event.keyCode == 13){
 					
-					xValues = []; 
+					xValues = [];
 					yValues = [];
 					$("#tags").click();
-					info = document.getElementById("tags").value;
+					info = document.getElementById("tags").value.toLowerCase();
 					$.each(amountTime[info], function( index, value ) {
-						console.log(index+" "+value);		
+						counter++;
 						addArray(index,value);
 						drawPlotly();
-					console.log(xValues);
-					console.log(yValues);
 
 					});
+					
+					xValues.push('2014-10');
+					yValues.push(0);
+					console.log(xValues);
+					console.log(yValues);
+					drawPlotly();
+					
 				}
+				
 			});
 			
 			drawPlotly();
@@ -116,7 +125,7 @@
 		
 			function addArray(date,wert) {
 			
-					xValues.push(date);
+					xValues.push(date+"");
 					yValues.push(wert);
 			}
 		</script>
