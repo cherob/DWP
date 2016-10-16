@@ -51,10 +51,11 @@ end
 puts $woerter_sortiert
 
 myfile = File.new("Daten/woerter_sortiert_timestamps_tage_dkb.js", "w+")
-myfile.write("var amountData = {" + "\n")
+myfile.write("var amountTime = {" + "\n")
 counter2 = 0
 $woerter_sortiert.each do |a1, a2|
-  output = "\t" + "\"" + a1 + "\"" + ":" +" " + a2.to_s.gsub("=>", ":") + "," + "\n"
+  puts a2.to_s.gsub("=>", ":").gsub("[[", "[{").gsub("]]", "}]").gsub("], [", "}, {")
+  output = "\t" + "\"" + a1 + "\"" + ":" +" " + a2.to_s.gsub("=>", ":").gsub("[[", "[{").gsub("]]", "}]").gsub("], [", "}, {") + "," + "\n"
 
   myfile.write(output)
   counter2 = counter2 + 1
