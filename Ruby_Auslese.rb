@@ -24,20 +24,30 @@ end
 def belegen_ts(wort, timestamp)
   wort = wort.downcase
   timekey = timestamp[0, 7]
-  puts timekey
   if !$stopwords.include?(wort)
     if $woerter.key?(wort)
-
       if $woerter[wort].key?(timekey)
+        neu = $woerter[wort][timekey]
+        neu = neu + 1
+        $woerter[wort][timekey] = neu
+      else
+        $woerter[wort][timekey] = 1
+      end
 
-      neu = $woerter[wort]
-      neu = neu + 1
-      $woerter[wort] = neu
+
     else
       $woerter[wort] = {}
       $woerter[wort][timekey] = 1
     end
   end
+end
+
+def sortieren
+  $woerter_sortiert = $woerter.sort {|a1, a2| a2[1].to_i <=> a1[1].to_i}
+end
+
+def sortieren_ts
+
 end
 
 def output
@@ -62,6 +72,7 @@ def output_ts
   counter2 = 0
   $woerter_sortiert.each do |a1, a2|
   output = "\t" + "\"" + a1 + "\"" + ":" +" " + a2.to_s + "," + "\n"
+  puts $woerter_sortiert
   myfile.write(output)
   counter2 = counter2 + 1
   #if counter2 > 2500
@@ -71,6 +82,7 @@ def output_ts
   myfile.write("}")
   myfile.close
 end
+
 
   while (line = file.gets)
             post = line[25, line.length]
@@ -88,15 +100,17 @@ end
               end
             end
             counter = counter + 1
-  end
+          end
+        end
 
 file.close
 $woerter_sortiert = $woerter.sort {|a1, a2| a2[1].to_i <=> a1[1].to_i}
-#puts $woerter_sortiert
+#puts $woerter
+puts $woerter_sortiert
 
 if use_timestamp
-  output_ts
+  #output_ts
+
 else
   output
 end
-
