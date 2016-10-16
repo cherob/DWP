@@ -19,14 +19,13 @@
 		<script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="./js/jsgl.min.js"></script>
 		<script type="text/javascript" src="./js/top100.js"></script>
-		<script type="text/javascript" src="./js/datelist.js"></script>
+		<script type="text/javascript" src="./js/woerter_sortiert_timestamps.js"></script>
 		<script type="text/javascript" src="./js/cssham.js"></script>
 		<script type="text/javascript" src="./js/jquery-ui.js"></script>
 		<script type="text/javascript" src="./js/xcharts.js"></script>
 		<script type="text/javascript" src="./js/d3.js"></script>
 		<script type="text/javascript" src="./js/d3.mim.js"></script>
 		<script type="text/javascript" src="./js/chartist.min.js"></script>
-		<script type="text/javascript" src="./js/main.js"></script>
 		<script type="text/javascript" src="./js/timelist.js"></script>
 		
  
@@ -71,24 +70,27 @@
 		  <input id="tags">
 		</div>
 		
-			<div id="myDiv" style="width: 480px; height: 400px;"><!-- Plotly chart will be drawn inside this DIV --></div>
+			<div id="myDiv" style="width: 100%; height: 50%;"><!-- Plotly chart will be drawn inside this DIV --></div>
 		<script>
 		
-			var yValues = []; 
-			var xValues = [];
+			var xValues = []; 
+			var yValues = [];
 			var info = "";
 
 			$("#tags").keyup(function(event){
 				if(event.keyCode == 13){
+					
+					xValues = []; 
+					yValues = [];
 					$("#tags").click();
 					info = document.getElementById("tags").value;
 					$.each(amountTime[info], function( index, value ) {
-						console.log(index+" "+value);
-												
+						console.log(index+" "+value);		
 						addArray(index,value);
-
 						drawPlotly();
-					
+					console.log(xValues);
+					console.log(yValues);
+
 					});
 				}
 			});
