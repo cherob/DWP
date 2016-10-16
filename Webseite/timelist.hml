@@ -19,6 +19,7 @@
 		<script type="text/javascript" src="./js/jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="./js/jsgl.min.js"></script>
 		<script type="text/javascript" src="./js/top100.js"></script>
+		<script type="text/javascript" src="./js/datelist.js"></script>
 		<script type="text/javascript" src="./js/cssham.js"></script>
 		<script type="text/javascript" src="./js/jquery-ui.js"></script>
 		<script type="text/javascript" src="./js/xcharts.js"></script>
@@ -32,7 +33,7 @@
 		<script>
 		$( function() {
 		
-			var availableTags = ['soccer', 'baseball'];
+			var availableTags = [];
 			
 			$.each(amountData, function( index, value ) {
 				var total = availableTags.push(index);
@@ -72,22 +73,48 @@
 		
 			<div id="myDiv" style="width: 480px; height: 400px;"><!-- Plotly chart will be drawn inside this DIV --></div>
 		<script>
+		
+			var yValues = []; 
+			var xValues = [];
+			var info = "";
+			$("#tags").keyup(function(event){
+				if(event.keyCode == 13){
+					$("#tags").click();
+					info = document.getElementById("tags").value;
+					$.each(amountTime[info], function( index, value ) {
+						console.log(index+" "+value);
+												
+						addArray(index,value);
+					console.log(xValues);
+					});
+				}
+			});
+		
+			
+		
+		
 		var data = [
 			  {
-				x: ['2013-10', '2013-11', '2013-12'],
-				y: [1, 3, 6],
+				x:xValues,
+				y:yValues,
 				type: 'scatter'
 			  }
 			];
 
 			Plotly.newPlot('myDiv', data);
+			
+		
+		function addArray(date,wert) {
+		
+			$.each(date, function( index, value ) {
+				var total = xValues.push(index);
+			});
+			
+			$.each(wert, function( index, value ) {
+				var total = yValues.push(index);
+			});
+		}
 		</script>
-
-  		<div class="word-list">
-  			<ul>
-  				<li class="word" id="menschen">menschen</li>
-  			</ul>
-  		</div>
   
 		<div id="timelist-panel"></div>
 
