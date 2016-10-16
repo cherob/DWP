@@ -106,13 +106,8 @@
 		
 		function addArray(date,wert) {
 		
-			$.each(date, function( index, value ) {
-				var total = xValues.push(index);
-			});
-			
-			$.each(wert, function( index, value ) {
-				var total = yValues.push(index);
-			});
+				xValues.push(date);
+				yValues.push(wert);
 		}
 		</script>
   
