@@ -2101,5 +2101,5 @@ var amountData = {
 	"satzzeichen": {"2014-11-23":1},
 	"frauen": {"2014-11-23":1},
 	"interprediert": {"2014-11-23":1},
-	"einzuwenden": {"2014-11-23":1},
+	"einzuwenden": {"2014-11-23":1}
 }

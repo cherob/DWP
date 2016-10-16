@@ -101,7 +101,6 @@ end
             end
             counter = counter + 1
           end
-        end
 
 file.close
 $woerter_sortiert = $woerter.sort {|a1, a2| a2[1].to_i <=> a1[1].to_i}
